@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>График количества добавленных книг по жанрам</h1>
+
+<div>
+    <a href="{% url 'admin:book_chart' 'day' %}">За 1 день</a> |
+    <a href="{% url 'admin:book_chart' 'month' %}">За 1 месяц</a> |
+    <a href="{% url 'admin:book_chart' 'year' %}">За 1 год</a> |
+    <a href="{% url 'admin:book_chart' 'all' %}">Все время</a>
+</div>
+
+<img src="data:image/png;base64,{{ image_file }}" alt="График количества книг по жанрам"/>
+{% endblock %}

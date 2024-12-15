@@ -1,0 +1,84 @@
+{#<!-- templates/books/book_confirm_delete.html -->#}
+{#<!DOCTYPE html>#}
+{#<html lang="ru">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Удалить книгу</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Удалить книгу</h1>#}
+{#    <p>Вы уверены, что хотите удалить книгу "{{ book.title }}"?</p>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        <button type="submit">Удалить</button>#}
+{#    </form>#}
+{#    <a href="{% url 'book_list' %}">Отмена</a>#}
+{#</body>#}
+{#</html>#}
+
+<!-- templates/books/book_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить книгу</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+        .button.cancel {
+            background-color: #3498db;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        .button.cancel:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Удалить книгу</h1>
+        <p>Вы уверены, что хотите удалить книгу "{{ book.title }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="button">Удалить</button>
+        </form>
+        <a href="{% url 'book_list' %}" class="button cancel">Отмена</a>
+    </div>
+</body>
+</html>

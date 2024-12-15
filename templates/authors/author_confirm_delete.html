@@ -1,0 +1,82 @@
+{#<!-- templates/authors/author_confirm_delete.html -->#}
+{#<!DOCTYPE html>#}
+{#<html lang="ru">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Удалить автора</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Удалить автора</h1>#}
+{#    <p>Вы уверены, что хотите удалить автора "{{ author.name }}"?</p>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        <button type="submit">Удалить</button>#}
+{#    </form>#}
+{#    <a href="{% url 'author_list' %}">Отмена</a>#}
+{#</body>#}
+{#</html>#}
+
+<!-- templates/authors/author_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить автора</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button.cancel {
+            background-color: #3498db;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        .button.cancel:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Удалить автора</h1>
+        <p>Вы уверены, что хотите удалить автора "{{ author.name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="button">Удалить</button>
+        </form>
+        <a href="{% url 'author_list' %}" class="button cancel">Отмена</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+{#<!-- templates/books/book_form.html -->#}
+{#<!DOCTYPE html>#}
+{#<html lang="ru">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Добавить/Редактировать книгу</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>{% if form.instance.pk %}Редактировать книгу{% else %}Добавить книгу{% endif %}</h1>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">Сохранить</button>#}
+{#    </form>#}
+{#    <a href="{% url 'book_list' %}">Назад к списку книг</a>#}
+{#</body>#}
+{#</html>#}
+
+<!-- templates/books/book_form.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить/Редактировать книгу</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            width: 100%;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{% if form.instance.pk %}Редактировать книгу{% else %}Добавить книгу{% endif %}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Сохранить</button>
+        </form>
+        <a href="{% url 'book_list' %}" class="back-link">Назад к списку книг</a>
+    </div>
+</body>
+</html>

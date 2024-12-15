@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Удалить полку</h2>
+  <p>Вы уверены, что хотите удалить "{{ object.location }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+  </form>
+  <a href="{% url 'shelf_list' %}">Отмена</a>
+{% endblock %}

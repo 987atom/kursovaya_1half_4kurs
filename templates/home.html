@@ -1,0 +1,90 @@
+{#<!-- templates/home.html -->#}
+{#<!DOCTYPE html>#}
+{#<html lang="ru">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Главная страница</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Добро пожаловать!</h1>#}
+{#    <h2>Перейдите к разделам:</h2>#}
+{#    <div>#}
+{#        <a href="{% url 'shelf_list' %}">#}
+{#            <button>Список полок</button>#}
+{#        </a>#}
+{#        <a href="{% url 'book_list_1' %}">#}
+{#            <button>Список книг</button>#}
+{#        </a>#}
+{#        <a href="{% url 'author_list' %}">#}
+{#            <button>Список авторов</button>#}
+{#        </a>#}
+{#        <a href="{% url 'genre_list' %}">#}
+{#            <button>Список жанров</button>#}
+{#        </a>#}
+{#    </div>#}
+{#</body>#}
+{#</html>#}
+
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #3498db; /* Синий цвет заголовка */
+        }
+        h2 {
+            margin-top: 10px;
+            color: #555;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db; /* Синий цвет для кнопки */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9; /* Более темный синий при наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать!</h1>
+    <h2>Перейдите к разделам:</h2>
+    <div class="button-container">
+        <a href="{% url 'shelf_list' %}">
+            <button>Список полок</button>
+        </a>
+        <a href="{% url 'book_list_1' %}">
+            <button>Список книг</button>
+        </a>
+        <a href="{% url 'author_list' %}">
+            <button>Список авторов</button>
+        </a>
+        <a href="{% url 'genre_list' %}">
+            <button>Список жанров</button>
+        </a>
+    </div>
+</body>
+</html>

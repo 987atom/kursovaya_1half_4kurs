@@ -1,0 +1,83 @@
+{#<!-- templates/genres/genre_confirm_delete.html -->#}
+{#<!DOCTYPE html>#}
+{#<html lang="ru">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Удалить жанр</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Удалить жанр</h1>#}
+{#    <p>Вы уверены, что хотите удалить жанр "{{ genre.genre_name }}"?</p>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        <button type="submit">Удалить</button>#}
+{#    </form>#}
+{#    <a href="{% url 'genre_list' %}">Отмена</a>#}
+{#</body>#}
+{#</html>#}
+
+<!-- templates/genres/genre_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удалить жанр</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Удалить жанр</h1>
+        <p>Вы уверены, что хотите удалить жанр "{{ genre.genre_name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Удалить</button>
+        </form>
+        <a href="{% url 'genre_list' %}">Отмена</a>
+    </div>
+</body>
+</html>

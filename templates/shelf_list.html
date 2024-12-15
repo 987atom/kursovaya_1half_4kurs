@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Список полок</h2>
+  <a href="{% url 'shelf_create' %}">Добавить полку</a>
+  <ul>
+    {% for shelf in object_list %}
+      <li>
+        {{ shelf.location }} - Вместимость: {{ shelf.capacity }}
+        <a href="{% url 'shelf_update' shelf.pk %}">Изменить</a>
+        <a href="{% url 'shelf_delete' shelf.pk %}">Удалить</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
