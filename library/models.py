@@ -16,8 +16,8 @@ def assign_permissions():
 
     for codename, name in permissions.items():
         permission, created = Permission.objects.get_or_create(codename=codename, name=name)
-        admin_group.permissions.add(permission)  # Администратор получает все права
-        librarian_group.permissions.add(permission)  # Библиотекарь получает права на просмотр и редактирование
+        admin_group.permissions.add(permission)
+        librarian_group.permissions.add(permission)
 
 class Author(models.Model):
     name = models.CharField(max_length=255, verbose_name=_("Имя"))
@@ -104,7 +104,7 @@ class Reader(models.Model):
     email = models.EmailField(unique=True, verbose_name=_("Электронная почта"))
     phone = models.CharField(max_length=15, null=True, blank=True, verbose_name=_("Телефон"))
     username = models.CharField(max_length=100, unique=True, verbose_name=_("Имя пользователя"))
-    password = models.CharField(max_length=255, verbose_name=_("Пароль"))  # Оставляем без изменений
+    password = models.CharField(max_length=255, verbose_name=_("Пароль"))
     role = models.ForeignKey(Role, on_delete=models.CASCADE, verbose_name=_("Роль"))
     last_login = models.DateTimeField(null=True, blank=True)
 
