@@ -42,5 +42,4 @@ urlpatterns = [
     path('books/', book_list, name='book_list'),
 
     path('home_librarian', HomeView.as_view(), name='home'),  # Главная страница
-
 ]
