@@ -5,16 +5,12 @@ from django.utils import timezone
 from datetime import timedelta
 from django.contrib import admin
 from django.urls import path
-from django.shortcuts import render
 from django.db.models import Count
 import matplotlib.pyplot as plt
 from io import BytesIO
 import csv
-import os
 from django.http import HttpResponse
-from django.shortcuts import redirect
-from django.core.management import call_command
-from django.conf import settings
+from django.shortcuts import redirect, render
 from .models import Author, Genre, Book, BookExemplar, Role, Reader, Staff, Shelf, Loan, BooksShelves
 
 

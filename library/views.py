@@ -1,24 +1,18 @@
 import csv
-import logging
 
 import pandas as pd
 from django.views import View
 
 from django.utils import timezone
-from .utils import authenticate_reader
-from django.contrib.auth.hashers import check_password
 from django.http import HttpResponse
 from .models import *
-from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Shelf
-from .forms import ShelfForm, BookForm, AuthorForm, GenreForm
+# from .models import Shelf
+from .forms import ShelfForm, BookForm, AuthorForm, GenreForm, ReaderRegistrationForm
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login as auth_login, authenticate, login
-from .forms import ReaderRegistrationForm, ReaderLoginForm
-from .models import Reader
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 def book_list(request):

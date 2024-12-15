@@ -1,4 +1,3 @@
-from django.contrib.auth.hashers import check_password
 from .models import Reader
 
 def authenticate_reader(username, password):
